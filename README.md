@@ -13,7 +13,7 @@ Small LLMs served from free Hugging Face Docker Spaces (2 vCPU, 16 GB RAM each).
 | `Ravi8084/deer` | `https://ravi8084-deer.hf.space/v1` |
 | `Ravi8084/deerflow` | `https://ravi8084-deerflow.hf.space/v1` |
 | `Ravi8084/ai-police` | `https://ravi8084-ai-police.hf.space/v1` |
-| `Ravi8084/agent11` | `https://ravi8084-agent11.hf.space/v1` |
+| `Ravi8084/agent11` | `https://ravi8084-agent11.hf.space/v1` (standby, see Limits) |
 
 The Spaces are private, so every request carries two headers:
 
@@ -64,6 +64,9 @@ To rotate the key, run it again with a new `LLAMA_API_KEY`.
 
 ## Limits
 
+- **Only 3 Spaces can run at once.** The free account's `cpu-basic` quota is 3, so a 4th
+  Space is paused with `Quota exceeded for flavor cpu-basic`. `agent11` is deployed but
+  paused; restart it from its Settings page after pausing one of the others.
 - **Speed per Space** (measured on `deer`): ~7 tokens/s generated, ~25 tokens/s of prompt
   read. A 2,000-token prompt takes over a minute before the first output token. Keep
   prompts short, and spread parallel work across Spaces.
