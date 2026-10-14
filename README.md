@@ -64,6 +64,9 @@ To rotate the key, run it again with a new `LLAMA_API_KEY`.
 
 ## Limits
 
+- **Speed per Space** (measured on `deer`): ~7 tokens/s generated, ~25 tokens/s of prompt
+  read. A 2,000-token prompt takes over a minute before the first output token. Keep
+  prompts short, and spread parallel work across Spaces.
 - **2 vCPU, 16 GB RAM.** The container reports the host's 16 CPUs and ~124 GB, so the
   server is pinned to 2 threads. Don't raise them.
 - **Sleeps after 48 h without requests** and restarts cold. Disk is wiped on restart; the
